@@ -1,6 +1,6 @@
 # Image Plugin
 
-Plugin de Spigot que te deja traer cualquier imagen, ya sea local o mediante una url, y verla convertida en bloques dentro de Minecraft.
+### Plugin de Spigot que te deja traer cualquier imagen, ya sea local o mediante una url, y verla convertida en bloques dentro de Minecraft.
 Transforma los colores en materiales del juego y levanta un mural pixelado automáticamente en tu mundo.
 Perfecto para decorar, divertirse y llenar tu server de arte en bloques, o directamente para joder a tu amigo con la cara de feo que tiene y ponerlo en el primer plano de tu server 👏.
 ---
