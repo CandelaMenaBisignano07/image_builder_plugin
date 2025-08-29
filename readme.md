@@ -60,4 +60,5 @@ para construir la imagen que elegiste en frente tuyo.
 
 ## Resultados en Minecraft
 <img width="2960" height="2960" alt="Perrito bebe" src="https://github.com/user-attachments/assets/1fa08ae7-4d42-482d-97d8-da12b5417991" />
-<img width="1467" height="918" alt="Mural de Minecraft de un perrito bebe" src="https://github.com/user-attachments/assets/8be40589-2dbb-4d97-823b-3dccbc234545" />
+<img width="1460" height="909" alt="Mural de perrito bebe en Minecraft" src="https://github.com/user-attachments/assets/fb9d0ac9-84b1-4508-874f-ebd874c427eb" />
+
