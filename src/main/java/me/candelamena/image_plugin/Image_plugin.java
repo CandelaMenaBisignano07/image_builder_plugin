@@ -21,8 +21,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class Image_plugin extends JavaPlugin implements CommandExecutor {
-    public static final Color TAN_BROWN     = new Color(222, 184, 135); // BurlyWood
-    public static final Color PALE_ORANGE   = new Color(255, 228, 181); // Moccasin
+    public static final Color TAN_BROWN     = new Color(222, 184, 135);
+    public static final Color PALE_ORANGE   = new Color(255, 228, 181);
 
 
     @Override
@@ -51,8 +51,7 @@ public final class Image_plugin extends JavaPlugin implements CommandExecutor {
                 BufferedImage image;
 
                 if (isLocal) {
-                    // Carga desde archivo local dentro del servidor
-                    File file = new File(getDataFolder(), "../../images/"+pathOrUrl).getCanonicalFile(); // ruta relativa a plugins/Image_plugin/
+                    File file = new File(getDataFolder(), "../../images/"+pathOrUrl).getCanonicalFile();
                     if (!file.exists()) {
                         player.sendMessage(ChatColor.RED + "El archivo local no existe!");
                         return;
@@ -69,7 +68,6 @@ public final class Image_plugin extends JavaPlugin implements CommandExecutor {
                     return;
                 }
 
-                // Resize
                 int maxSize = 64;
                 int width = Math.min(image.getWidth(), maxSize);
                 int height = Math.min(image.getHeight(), maxSize);
@@ -80,7 +78,6 @@ public final class Image_plugin extends JavaPlugin implements CommandExecutor {
                 g.drawImage(scaled, 0, 0, null);
                 g.dispose();
 
-                // Construir en el hilo principal
                 Bukkit.getScheduler().runTask(this, () -> {
                     buildImage(resized, player);
                     player.sendMessage(ChatColor.GREEN + "Imagen construida!");
@@ -101,23 +98,23 @@ public final class Image_plugin extends JavaPlugin implements CommandExecutor {
         Map<Material, Color> palette = new HashMap<>();
 
         palette.put(Material.WHITE_CONCRETE, Color.WHITE);
-        palette.put(Material.BLACK_WOOL, new Color(8, 8, 8));              // negro apagado
+        palette.put(Material.BLACK_WOOL, new Color(8, 8, 8));            
 
         palette.put(Material.TERRACOTTA, TAN_BROWN);
         palette.put(Material.SANDSTONE, PALE_ORANGE);
 
-        palette.put(Material.BLUE_WOOL, new Color(25, 25, 112));        // Midnight Blue - intenso
-        palette.put(Material.LIGHT_BLUE_WOOL, new Color(135, 206, 250)); // Light Sky Blue - suave y tranquilo
-        palette.put(Material.CYAN_WOOL, new Color(0, 255, 255));         // Cyan brillante
+        palette.put(Material.BLUE_WOOL, new Color(25, 25, 112));        
+        palette.put(Material.LIGHT_BLUE_WOOL, new Color(135, 206, 250)); 
+        palette.put(Material.CYAN_WOOL, new Color(0, 255, 255));       
 
-        palette.put(Material.WHITE_CONCRETE_POWDER, new Color(255, 250, 250));      // Snow White
-        palette.put(Material.PINK_CONCRETE_POWDER, new Color(255, 192, 203));       // Pastel rosa suave
-        palette.put(Material.MAGENTA_CONCRETE_POWDER, new Color(238, 130, 238));    // Pastel violeta
-        palette.put(Material.LIGHT_GRAY_CONCRETE_POWDER, new Color(211, 211, 211)); // Gris pastel
-        palette.put(Material.YELLOW_CONCRETE_POWDER, new Color(255, 255, 224));     // Light Yellow
-        palette.put(Material.RED_CONCRETE_POWDER, new Color(220, 20, 60));          // Crimson
+        palette.put(Material.WHITE_CONCRETE_POWDER, new Color(255, 250, 250));      
+        palette.put(Material.PINK_CONCRETE_POWDER, new Color(255, 192, 203));       
+        palette.put(Material.MAGENTA_CONCRETE_POWDER, new Color(238, 130, 238));    
+        palette.put(Material.LIGHT_GRAY_CONCRETE_POWDER, new Color(211, 211, 211)); 
+        palette.put(Material.YELLOW_CONCRETE_POWDER, new Color(255, 255, 224));     
+        palette.put(Material.RED_CONCRETE_POWDER, new Color(220, 20, 60));          
 
-        palette.put(Material.AIR, new Color(0,0,0,0)); // transparente
+        palette.put(Material.AIR, new Color(0,0,0,0)); 
         palette.put(Material.GRASS_BLOCK, new Color(127, 178, 56));
         palette.put(Material.SAND, new Color(247, 233, 163));
         palette.put(Material.WHITE_WOOL, new Color(199, 199, 199));
@@ -211,7 +208,7 @@ public final class Image_plugin extends JavaPlugin implements CommandExecutor {
         }
     }
 
-    // Determina si un bloque necesita soporte
+
     private boolean needsSupport(Material mat) {
         return mat == Material.SAND
                 || mat == Material.GRAVEL
