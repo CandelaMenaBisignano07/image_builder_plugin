@@ -1,0 +1,8 @@
+name: image_plugin
+version: '1.0-SNAPSHOT'
+main: me.candelamena.image_plugin.Image_plugin
+api-version: '1.21'
+commands:
+  buildimage:
+    description: "Comando para crear una imagen con bloques."
+    usage: '/buildimage <image-path-or-url> [local]'
